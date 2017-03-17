@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UAV Hover</string>
+    <string name="IP">域名</string>
+    <string name="IP_hint">请输入域名</string>
+    <string name="port">密码</string>#2F91A0  #0F4081
+    <string name="port_hint">请输入密码</string>
+    <string name="link">连接</string>
+</resources>
