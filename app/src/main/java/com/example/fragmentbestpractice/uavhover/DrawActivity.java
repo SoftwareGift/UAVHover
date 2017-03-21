@@ -1,15 +1,20 @@
 package com.example.fragmentbestpractice.uavhover;
 
-/**
- * Created by Administrator on 2017-03-16.
- */
-
-import android.content.Context;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.usrcloudlibrary.USRConnect;
@@ -18,32 +23,25 @@ import com.android.usrcloudlibrary.USRConnectManager;
 import com.android.usrcloudlibrary.Utils.USRConfig;
 import com.android.usrcloudlibrary.Utils.USRStringUtils;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+
+import static android.R.attr.start;
+
 
 /**
- * 实现View对象，响应陀螺仪改变事件
- * 达到类似IOS那种背景图片移动的效果
- * 在onResume里使用{@link #start()}
- * 在onPause里使用{@link #stop()}
+ * Created by Administrator on 2017-03-17.
  */
-public class ParallelViewHelper implements GyroScopeSensorListener.ISensorListener {
 
-    /**
-     * 默认0.02f在宽度填满屏幕的图片上，移动起来看着很舒服
-     */
-    public static final float TRANSFORM_FACTOR = 0.02f;
-    private float mTransformFactor = TRANSFORM_FACTOR;
-    private View mParallelView;
-    private float mCurrentShiftX;
-    private float lastmCurrentShiftX;
-    private float lastmCurrentShiftY;
-    private float mCurrentShiftY;
-    private float differY;
-    private float differX;
-    private GyroScopeSensorListener mSensorListener;
-    private ViewGroup.LayoutParams mLayoutParams;
-    private int mViewWidth;
-    private int mViewHeight;
-    private int mShiftDistancePX;
+public class DrawActivity extends Activity {
+    private ImageView iv;
+    private Bitmap baseBitmap;
+    private Canvas canvas;
+    private Paint paint;
+    int startX;
+    int startY;
+
 
     //有人穿透云连接接口
     private USRConnectManager usrConnectManager;
@@ -56,111 +54,101 @@ public class ParallelViewHelper implements GyroScopeSensorListener.ISensorListen
     final String DEFAULT_DID = "00006737000000000001";//设定的设备ID
     final String DEFAULT_COMPASS = "0000peng";//云端设定的通信密码
 
-    public ParallelViewHelper(Context context, final View targetView) {
-        this(context, targetView, context.getResources().getDimensionPixelSize(R.dimen.image_shift));
-    }
-
-    /**
-     * 初始化一个
-     *
-     * @param context
-     * @param targetView
-     * @param shiftDistancePX
-     */
-    public ParallelViewHelper(Context context, final View targetView, int shiftDistancePX) {
-        mShiftDistancePX = shiftDistancePX;
-        mSensorListener = new GyroScopeSensorListener(context);
-        mSensorListener.setSensorListener(this);
-        mParallelView = targetView;
-        mParallelView.setX(-mShiftDistancePX);
-        mParallelView.setY(-mShiftDistancePX);
-        mLayoutParams = mParallelView.getLayoutParams();
-        mViewWidth = mParallelView.getWidth();
-        mViewHeight = mParallelView.getHeight();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_draw);
+        this.iv = (ImageView) this.findViewById(R.id.iv);
+        // 创建一张空白图片
+        baseBitmap = Bitmap.createBitmap(700, 1100, Bitmap.Config.ARGB_8888);
+        // 创建一张画布
+        canvas = new Canvas(baseBitmap);
+        // 画布背景为灰色
+        //canvas.drawColor(Color.GRAY);
+        canvas.drawColor(Color.WHITE);
+        // 创建画笔
+        paint = new Paint();
+        // 画笔颜色为红色
+        paint.setColor(Color.RED);
+        // 宽度5个像素
+        paint.setStrokeWidth(5);
+        // 先将灰色背景画上
+        canvas.drawBitmap(baseBitmap, new Matrix(), paint);
+        iv.setImageBitmap(baseBitmap);
         //获取connectManager实例
         usrConnectManager = USRConnectManager.getInstance();
         connect();
+//        if (!isConnect){
+//            Intent intent = new Intent();
+//            intent.setClass(DrawActivity.this, LoginActivity.class);
+//            startActivity(intent);
+//        }
 
-        if (mViewWidth > 0 && mViewHeight > 0) {
-            bindView();
-            return;
-        }
+        iv.setOnTouchListener(new View.OnTouchListener() {
 
-        ViewTreeObserver vto = targetView.getViewTreeObserver();
-        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
-            public void onGlobalLayout() {
-                targetView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                mViewWidth = targetView.getWidth();
-                mViewHeight = targetView.getHeight();
-                bindView();
+            public boolean onTouch(View v, MotionEvent event) {
+
+                switch (event.getAction()) {
+
+                    case MotionEvent.ACTION_DOWN:
+                        // 获取手按下时的坐标
+                        startX = (int) event.getX();
+                        startY = (int) event.getY();
+                        send(startX,startY);
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        // 获取手移动后的坐标
+                        int stopX = (int) event.getX();
+                        int stopY = (int) event.getY();
+                        send(stopX,stopY);
+                        // 在开始和结束坐标间画一条线
+                        canvas.drawLine(startX, startY, stopX, stopY, paint);
+                        // 实时更新开始坐标
+                        startX = (int) event.getX();
+                        startY = (int) event.getY();
+                        send(startX,startY);
+                        iv.setImageBitmap(baseBitmap);
+                        break;
+                }
+                return true;
             }
         });
     }
+    public void save(View view) {
+        try {
+            File file = new File(Environment.getExternalStorageDirectory()+"/aDraw",
+                    System.currentTimeMillis() + ".jpg");
+            OutputStream stream = new FileOutputStream(file);
 
-    void bindView() {
-        mLayoutParams.width = mViewWidth + mShiftDistancePX * 2;
-        mLayoutParams.height = mViewHeight + mShiftDistancePX * 2;
-        mParallelView.setLayoutParams(mLayoutParams);
-    }
-
-
-    /**
-     * 注册监听陀螺仪事件
-     */
-    public void start() {
-        mSensorListener.start();
-    }
-
-    /**
-     * 监听陀螺仪事件耗电，因此在onPause里需要注销监听事件
-     */
-    public void stop() {
-        mSensorListener.stop();
-    }
-
-    /**
-     * 设置移动的补偿变量，越高移动越快，标准参考{@link #TRANSFORM_FACTOR}
-     *
-     * @param transformFactor
-     */
-    public void setTransformFactor(float transformFactor) {
-        mTransformFactor = transformFactor;
-    }
-
-    @Override
-    public void onGyroScopeChange(float horizontalShift, float verticalShift) {
-        mCurrentShiftX += mShiftDistancePX * horizontalShift * mTransformFactor;
-        mCurrentShiftY += mShiftDistancePX * verticalShift * mTransformFactor;
-        //记录上一次mCurrentShiftX，mCurrentShiftY的值，并做差，超过一定值则发送到STM32
-        differY = lastmCurrentShiftY-mCurrentShiftY;
-        differX = lastmCurrentShiftX-mCurrentShiftX;
-
-        //Log.d("ParalleViewHelper",lastmCurrentShiftY+"、"+lastmCurrentShiftX);
-        //Log.d("ParalleViewHelper","记录上次的Y和X"+lastmCurrentShiftY+"和"+lastmCurrentShiftX);
-        //Log.d("ParalleViewHelper","记录Y和X的差"+differY+"和"+differX);
-        if(Math.abs(differY)>2) {
-            //Log.d("ParalleViewHelper", mShiftDistancePX + "和" + horizontalShift);
-            Log.d("ParalleViewHelper",differY+"");
-            String strDifferY = differY +"";
-            byte[] b=strDifferY.getBytes();
-            //发送数据给服务器
-            connect.send(b);
+            baseBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            stream.close();
+//            // 模拟一个广播，通知系统sdcard被挂载
+//            Intent intent = new Intent();
+//            intent.setAction(Intent.ACTION_MEDIA_MOUNTED);
+//            intent.setData(Uri.fromFile(Environment
+//                    .getExternalStorageDirectory()));
+//            sendBroadcast(intent);
+            Toast.makeText(this, "保存图片成功", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "保存图片失败", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
-
-        if (Math.abs(mCurrentShiftX) > mShiftDistancePX)
-            mCurrentShiftX = mCurrentShiftX < 0 ? -mShiftDistancePX : mShiftDistancePX;
-
-        if (Math.abs(mCurrentShiftY) > mShiftDistancePX)
-            mCurrentShiftY = mCurrentShiftY < 0 ? -mShiftDistancePX : mShiftDistancePX;
-
-        //默认就margin 负的边距尺寸，因此 margin的最大值是 负的边距尺寸*2 ~ 0
-        //mParallelView.setX((int) mCurrentShiftX - mShiftDistancePX);
-        mParallelView.setY((int) mCurrentShiftY - mShiftDistancePX);
-        lastmCurrentShiftX = mCurrentShiftX;
-        lastmCurrentShiftY = mCurrentShiftY;
     }
+    private void send(int startX,int startY){
+        String strStartX = String.valueOf(startX);
+        String strStartY = String.valueOf(startY);
+        byte[] bX=strStartX.getBytes();
+        byte[] bY=strStartY.getBytes();
+        Log.d("bX的长度是",bX.length+"");
+        Log.d("bY的长度是",bY.length+"");
+        byte[] bXY = new byte[bX.length + bY.length];
+        System.arraycopy(bX, 0, bXY, 0, bX.length);
+        System.arraycopy(bY, 0, bXY, bX.length, bY.length);
+        //发送数据给服务器
+        connect.send(bXY);
 
+    }
     //如果你有多个连接，可以用个list保存
 //    private List<USRConnect> connects = new ArrayList<>();
 
@@ -264,6 +252,7 @@ public class ParallelViewHelper implements GyroScopeSensorListener.ISensorListen
 //                tvContent.append(s+"\n");
 //                tvContent.append(USRStringUtils.bytesToHexString(data)+"\n");
             }
+
 
 
         });

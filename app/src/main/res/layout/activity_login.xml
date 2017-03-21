@@ -51,7 +51,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="6"
             android:hint="@string/port_hint"
-            />
+            android:inputType="textPassword" >
+            <requestFocus />
+        </EditText>
     </LinearLayout>
 
 
@@ -73,16 +75,67 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="50dp"
+        >
+        <Button
+            android:id="@+id/Draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryGreen"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/draw"
+            android:textSize="18sp"
+            android:textColor="#ffffff" />
+        <Button
+            android:id="@+id/Play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryGreen"
+            android:layout_marginLeft="100dp"
+            android:text="@string/play"
+            android:textSize="18sp"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="20dp">
+        <!--<Button-->
+            <!--android:id="@+id/Play"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/colorPrimaryGreen"-->
+            <!--android:layout_gravity="center_vertical|center_horizontal"-->
+            <!--android:text="@string/play"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textColor="#ffffff" />-->
+    </LinearLayout>
+
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Receive:"/>
+        android:text="Receive:"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimaryGreen"/>
+
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
         android:scrollbars="vertical"/>
 
 

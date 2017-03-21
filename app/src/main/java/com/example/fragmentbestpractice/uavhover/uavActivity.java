@@ -19,6 +19,8 @@ public class uavActivity extends AppCompatActivity {
 //        intent.setClass(MainActivity.this, LoginActivity.class);
 //        startActivity(intent);
         parallelViewHelper = new ParallelViewHelper(this, findViewById(R.id.main_image_background));
+
+
     }
 
     @Override

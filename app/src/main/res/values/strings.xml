@@ -5,4 +5,6 @@
     <string name="port">密码</string>#2F91A0  #0F4081
     <string name="port_hint">请输入密码</string>
     <string name="link">连接</string>
+    <string name="draw">开始画画</string>
+    <string name="play">PLAY</string>
 </resources>

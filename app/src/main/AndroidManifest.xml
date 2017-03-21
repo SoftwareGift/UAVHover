@@ -4,6 +4,8 @@
     //添加网络权限
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    //使得sd卡获得写的权限
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,13 +21,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        //飞机
         <activity
             android:name=".uavActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+        //画画
+        <activity
+            android:name=".DrawActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:exported="true">
+
+
+
+        </activity>
+        <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+
 
     </application>
 
