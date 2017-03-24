@@ -10,7 +10,11 @@ import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
+import android.os.StrictMode;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,6 +32,8 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 import static android.R.attr.start;
+import static android.R.attr.width;
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -39,8 +45,15 @@ public class DrawActivity extends Activity {
     private Bitmap baseBitmap;
     private Canvas canvas;
     private Paint paint;
-    int startX;
+    int startX = -1;
     int startY;
+    int stopX = -1;
+    int stopY;
+
+    int widthPix;//运行时的分辨率，即本机分辨率
+    int heightPix;
+    private float baseScreenWidth = 480;  //开发时的分辨率
+    private float baseScreenHeight = 800;
 
 
     //有人穿透云连接接口
@@ -57,15 +70,31 @@ public class DrawActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads().detectDiskWrites().detectNetwork()
+                .penaltyLog().build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
+                .penaltyLog().penaltyDeath().build());
         setContentView(R.layout.activity_draw);
+//        new Thread(runnable).start();
         this.iv = (ImageView) this.findViewById(R.id.iv);
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        widthPix = dm.widthPixels;
+        heightPix = dm.heightPixels;
+//        Bitmap baseBitmapCv = Bitmap.createBitmap(widthPix, heightPix-100, Bitmap.Config.ARGB_8888);
+//        Canvas cv = new Canvas(baseBitmapCv);  //根据bitamp创建画布
+//        cv.scale(widthPix/baseScreenWidth,heightPix/baseScreenHeight);
+//        this.canvas = cv;
+//        this.baseBitmap = baseBitmapCv;
         // 创建一张空白图片
-        baseBitmap = Bitmap.createBitmap(700, 1100, Bitmap.Config.ARGB_8888);
-        // 创建一张画布
+        baseBitmap = Bitmap.createBitmap(widthPix, heightPix-100, Bitmap.Config.ARGB_8888);
+//        // 创建一张画布
         canvas = new Canvas(baseBitmap);
         // 画布背景为灰色
         //canvas.drawColor(Color.GRAY);
-        canvas.drawColor(Color.WHITE);
+        this.canvas.drawColor(Color.WHITE);
         // 创建画笔
         paint = new Paint();
         // 画笔颜色为红色
@@ -78,11 +107,6 @@ public class DrawActivity extends Activity {
         //获取connectManager实例
         usrConnectManager = USRConnectManager.getInstance();
         connect();
-//        if (!isConnect){
-//            Intent intent = new Intent();
-//            intent.setClass(DrawActivity.this, LoginActivity.class);
-//            startActivity(intent);
-//        }
 
         iv.setOnTouchListener(new View.OnTouchListener() {
 
@@ -95,19 +119,22 @@ public class DrawActivity extends Activity {
                         // 获取手按下时的坐标
                         startX = (int) event.getX();
                         startY = (int) event.getY();
-                        send(startX,startY);
+                        send_data(startX,startY,true);
+                        Log.d("手按下的时候的坐标",startX + "和" + startY);
                         break;
                     case MotionEvent.ACTION_MOVE:
                         // 获取手移动后的坐标
-                        int stopX = (int) event.getX();
-                        int stopY = (int) event.getY();
-                        send(stopX,stopY);
+                        stopX = (int) event.getX();
+                        stopY = (int) event.getY();
+                        Log.d("手移动后的坐标",stopX + "和" +stopY);
+                        send_data(stopX,stopY,false);
                         // 在开始和结束坐标间画一条线
                         canvas.drawLine(startX, startY, stopX, stopY, paint);
                         // 实时更新开始坐标
                         startX = (int) event.getX();
                         startY = (int) event.getY();
-                        send(startX,startY);
+                        Log.d("实时更新开始坐标",startX + "和" + startY);
+                        send_data(startX,startY,true);
                         iv.setImageBitmap(baseBitmap);
                         break;
                 }
@@ -135,19 +162,22 @@ public class DrawActivity extends Activity {
             e.printStackTrace();
         }
     }
-    private void send(int startX,int startY){
-        String strStartX = String.valueOf(startX);
-        String strStartY = String.valueOf(startY);
-        byte[] bX=strStartX.getBytes();
-        byte[] bY=strStartY.getBytes();
-        Log.d("bX的长度是",bX.length+"");
-        Log.d("bY的长度是",bY.length+"");
-        byte[] bXY = new byte[bX.length + bY.length];
-        System.arraycopy(bX, 0, bXY, 0, bX.length);
-        System.arraycopy(bY, 0, bXY, bX.length, bY.length);
-        //发送数据给服务器
-        connect.send(bXY);
 
+    private void send_data(int startX,int startY,boolean isStart){
+        byte b[] = new byte[4];
+        b[0] = (byte)(startX >> 8);
+        b[1] = (byte)(startX & 0xff);
+        b[2] = (byte)(startY >> 8);
+        b[3] = (byte)(startY & 0xff);
+//        if (isStart){
+//            b[4] = 1 & 0x01;//start 0x01
+//        }
+//        else
+//        {
+//            b[4] = 0 & 0x01;//stop 0x00;
+//        }
+
+        connect.send(b);
     }
     //如果你有多个连接，可以用个list保存
 //    private List<USRConnect> connects = new ArrayList<>();
@@ -215,15 +245,15 @@ public class DrawActivity extends Activity {
                 }
 
 
-//                Toast.makeText(LoginActivity.this,error,Toast.LENGTH_SHORT).show();
+                Toast.makeText(DrawActivity.this,error,Toast.LENGTH_SHORT).show();
                 Log.d("ParallelViewHelper",error);
+                Intent intent = new Intent();
+                intent.setClass(DrawActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
             @Override
             public void onRegisterSuccess(String deviceId) {
                 System.out.println("连接成功");
-//                Intent intent = new Intent();
-//                intent.setClass(LoginActivity.this, uavActivity.class);
-//                startActivity(intent);
                 Log.d("ParallelViewHelper","注册成功------------------->deviceId:"+deviceId);
                 System.out.println("注册成功------------------->deviceId:"+deviceId);
             }
@@ -246,11 +276,34 @@ public class DrawActivity extends Activity {
 
             @Override
             public void onReceviceData(String deviceId, byte[] data) {
+                int mStartX;
+                int mStartY;
+                int mStopX;
+                int mStopY;
                 System.out.println("deviceId------------>"+deviceId+"  data:"+ USRStringUtils.bytesToHexString(data));
                 String s = new String(data);
                 Log.d("ParallelViewHelper",s);
-//                tvContent.append(s+"\n");
-//                tvContent.append(USRStringUtils.bytesToHexString(data)+"\n");
+                if(data[4] == 0x01){
+                    //如果data[4]是0x01，表示start
+                    mStartX = data[0] << 8;
+                    startX = mStartX + data[1];
+                    mStartY = data[2] << 8;
+                    startY = mStartY + data[3];
+                    Log.d("start",startX + "和" + startY);
+                }
+                else{
+                    mStopX = data[0] << 8;
+                    stopX = mStopX + data[1];
+                    mStopY = data[2] << 8;
+                    stopY = mStopY + data[3];
+                    Log.d("stop",stopX + "和" + stopY);
+                }
+                //如果两个坐标的值都不是初始值
+                if(stopX!=-1 && startX != -1){
+                    // 在开始和结束坐标间画一条线
+                    canvas.drawLine(startX, startY, stopX, stopY, paint);
+                    iv.setImageBitmap(baseBitmap);
+                }
             }
 
 

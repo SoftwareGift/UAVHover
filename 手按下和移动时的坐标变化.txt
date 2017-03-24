@@ -1,0 +1,502 @@
+D/USRConnect: ------------------>send Data:02 0d 01 2b
+D/手按下的时候的坐标: 525和299
+D/手移动后的坐标: 525和349
+D/USRConnect: ------------------>send Data:02 0d 01 5d
+D/实时更新开始坐标: 525和349
+D/USRConnect: ------------------>send Data:02 0d 01 5d
+D/手移动后的坐标: 525和384
+D/USRConnect: ------------------>send Data:02 0d 01 80
+D/实时更新开始坐标: 525和384
+D/USRConnect: ------------------>send Data:02 0d 01 80
+D/手移动后的坐标: 525和422
+D/USRConnect: ------------------>send Data:02 0d 01 a6
+D/实时更新开始坐标: 525和422
+D/USRConnect: ------------------>send Data:02 0d 01 a6
+D/手移动后的坐标: 525和459
+D/USRConnect: ------------------>send Data:02 0d 01 cb
+D/实时更新开始坐标: 525和459
+D/USRConnect: ------------------>send Data:02 0d 01 cb
+D/手移动后的坐标: 512和496
+D/USRConnect: ------------------>send Data:02 00 01 f0
+D/实时更新开始坐标: 512和496
+D/USRConnect: ------------------>send Data:02 00 01 f0
+D/手移动后的坐标: 506和519
+D/USRConnect: ------------------>send Data:01 fa 02 07
+D/实时更新开始坐标: 506和519
+D/USRConnect: ------------------>send Data:01 fa 02 07
+D/手移动后的坐标: 491和579
+D/USRConnect: ------------------>send Data:01 eb 02 43
+D/实时更新开始坐标: 491和579
+D/USRConnect: ------------------>send Data:01 eb 02 43
+D/手移动后的坐标: 477和611
+D/USRConnect: ------------------>send Data:01 dd 02 63
+D/实时更新开始坐标: 477和611
+D/USRConnect: ------------------>send Data:01 dd 02 63
+D/手移动后的坐标: 467和646
+D/USRConnect: ------------------>send Data:01 d3 02 86
+D/实时更新开始坐标: 467和646
+D/USRConnect: ------------------>send Data:01 d3 02 86
+D/手移动后的坐标: 453和695
+D/USRConnect: ------------------>send Data:01 c5 02 b7
+D/实时更新开始坐标: 453和695
+D/USRConnect: ------------------>send Data:01 c5 02 b7
+D/手移动后的坐标: 437和751
+D/USRConnect: ------------------>send Data:01 b5 02 ef
+D/实时更新开始坐标: 437和751
+D/USRConnect: ------------------>send Data:01 b5 02 ef
+D/手移动后的坐标: 420和814
+D/USRConnect: ------------------>send Data:01 a4 03 2e
+D/实时更新开始坐标: 420和814
+D/USRConnect: ------------------>send Data:01 a4 03 2e
+D/手移动后的坐标: 408和856
+D/USRConnect: ------------------>send Data:01 98 03 58
+D/实时更新开始坐标: 408和856
+D/USRConnect: ------------------>send Data:01 98 03 58
+D/USRConnect: ------------------>send Data:00 d3 00 fd
+D/手按下的时候的坐标: 211和253
+D/手移动后的坐标: 211和275
+D/USRConnect: ------------------>send Data:00 d3 01 13
+D/实时更新开始坐标: 211和275
+D/USRConnect: ------------------>send Data:00 d3 01 13
+D/手移动后的坐标: 216和294
+D/USRConnect: ------------------>send Data:00 d8 01 26
+D/实时更新开始坐标: 216和294
+D/USRConnect: ------------------>send Data:00 d8 01 26
+D/手移动后的坐标: 220和308
+D/USRConnect: ------------------>send Data:00 dc 01 34
+D/实时更新开始坐标: 220和308
+D/USRConnect: ------------------>send Data:00 dc 01 34
+D/手移动后的坐标: 223和329
+D/USRConnect: ------------------>send Data:00 df 01 49
+D/实时更新开始坐标: 223和329
+D/USRConnect: ------------------>send Data:00 df 01 49
+D/手移动后的坐标: 225和345
+D/USRConnect: ------------------>send Data:00 e1 01 59
+D/实时更新开始坐标: 225和345
+D/USRConnect: ------------------>send Data:00 e1 01 59
+D/手移动后的坐标: 226和362
+D/USRConnect: ------------------>send Data:00 e2 01 6a
+D/实时更新开始坐标: 226和362
+D/USRConnect: ------------------>send Data:00 e2 01 6a
+D/手移动后的坐标: 227和386
+D/USRConnect: ------------------>send Data:00 e3 01 82
+D/实时更新开始坐标: 227和386
+D/USRConnect: ------------------>send Data:00 e3 01 82
+D/手移动后的坐标: 227和399
+D/USRConnect: ------------------>send Data:00 e3 01 8f
+D/实时更新开始坐标: 227和399
+D/USRConnect: ------------------>send Data:00 e3 01 8f
+D/手移动后的坐标: 227和418
+D/USRConnect: ------------------>send Data:00 e3 01 a2
+D/实时更新开始坐标: 227和418
+D/USRConnect: ------------------>send Data:00 e3 01 a2
+D/手移动后的坐标: 227和433
+D/USRConnect: ------------------>send Data:00 e3 01 b1
+D/实时更新开始坐标: 227和433
+D/USRConnect: ------------------>send Data:00 e3 01 b1
+D/手移动后的坐标: 227和453
+D/USRConnect: ------------------>send Data:00 e3 01 c5
+D/实时更新开始坐标: 227和453
+D/USRConnect: ------------------>send Data:00 e3 01 c5
+D/手移动后的坐标: 228和472
+D/USRConnect: ------------------>send Data:00 e4 01 d8
+D/实时更新开始坐标: 228和472
+D/USRConnect: ------------------>send Data:00 e4 01 d8
+D/手移动后的坐标: 230和485
+D/USRConnect: ------------------>send Data:00 e6 01 e5
+D/实时更新开始坐标: 230和485
+D/USRConnect: ------------------>send Data:00 e6 01 e5
+D/手移动后的坐标: 233和510
+D/USRConnect: ------------------>send Data:00 e9 01 fe
+D/实时更新开始坐标: 233和510
+D/USRConnect: ------------------>send Data:00 e9 01 fe
+D/手移动后的坐标: 236和529
+D/USRConnect: ------------------>send Data:00 ec 02 11
+D/实时更新开始坐标: 236和529
+D/USRConnect: ------------------>send Data:00 ec 02 11
+D/手移动后的坐标: 238和549
+D/USRConnect: ------------------>send Data:00 ee 02 25
+D/实时更新开始坐标: 238和549
+D/USRConnect: ------------------>send Data:00 ee 02 25
+D/手移动后的坐标: 240和568
+D/USRConnect: ------------------>send Data:00 f0 02 38
+D/实时更新开始坐标: 240和568
+D/USRConnect: ------------------>send Data:00 f0 02 38
+D/手移动后的坐标: 241和591
+D/USRConnect: ------------------>send Data:00 f1 02 4f
+D/实时更新开始坐标: 241和591
+D/USRConnect: ------------------>send Data:00 f1 02 4f
+D/手移动后的坐标: 243和609
+D/USRConnect: ------------------>send Data:00 f3 02 61
+D/实时更新开始坐标: 243和609
+D/USRConnect: ------------------>send Data:00 f3 02 61
+D/手移动后的坐标: 243和628
+D/USRConnect: ------------------>send Data:00 f3 02 74
+D/实时更新开始坐标: 243和628
+D/USRConnect: ------------------>send Data:00 f3 02 74
+D/手移动后的坐标: 244和653
+D/USRConnect: ------------------>send Data:00 f4 02 8d
+D/实时更新开始坐标: 244和653
+D/USRConnect: ------------------>send Data:00 f4 02 8d
+D/手移动后的坐标: 244和673
+D/USRConnect: ------------------>send Data:00 f4 02 a1
+D/实时更新开始坐标: 244和673
+D/USRConnect: ------------------>send Data:00 f4 02 a1
+D/手移动后的坐标: 244和703
+D/USRConnect: ------------------>send Data:00 f4 02 bf
+D/实时更新开始坐标: 244和703
+D/USRConnect: ------------------>send Data:00 f4 02 bf
+D/手移动后的坐标: 244和722
+D/USRConnect: ------------------>send Data:00 f4 02 d2
+D/实时更新开始坐标: 244和722
+D/USRConnect: ------------------>send Data:00 f4 02 d2
+D/手移动后的坐标: 245和734
+D/USRConnect: ------------------>send Data:00 f5 02 de
+D/实时更新开始坐标: 245和734
+D/USRConnect: ------------------>send Data:00 f5 02 de
+D/手移动后的坐标: 245和746
+D/USRConnect: ------------------>send Data:00 f5 02 ea
+D/实时更新开始坐标: 245和746
+D/USRConnect: ------------------>send Data:00 f5 02 ea
+D/手移动后的坐标: 245和757
+D/USRConnect: ------------------>send Data:00 f5 02 f5
+D/实时更新开始坐标: 245和757
+D/USRConnect: ------------------>send Data:00 f5 02 f5
+D/手移动后的坐标: 245和769
+D/USRConnect: ------------------>send Data:00 f5 03 01
+D/实时更新开始坐标: 245和769
+D/USRConnect: ------------------>send Data:00 f5 03 01
+D/手移动后的坐标: 246和781
+D/USRConnect: ------------------>send Data:00 f6 03 0d
+D/实时更新开始坐标: 246和781
+D/USRConnect: ------------------>send Data:00 f6 03 0d
+D/手移动后的坐标: 247和789
+D/USRConnect: ------------------>send Data:00 f7 03 15
+D/实时更新开始坐标: 247和789
+D/USRConnect: ------------------>send Data:00 f7 03 15
+D/手移动后的坐标: 247和798
+D/USRConnect: ------------------>send Data:00 f7 03 1e
+D/实时更新开始坐标: 247和798
+D/USRConnect: ------------------>send Data:00 f7 03 1e
+D/手移动后的坐标: 247和807
+D/USRConnect: ------------------>send Data:00 f7 03 27
+D/实时更新开始坐标: 247和807
+D/USRConnect: ------------------>send Data:00 f7 03 27
+D/手移动后的坐标: 248和815
+D/USRConnect: ------------------>send Data:00 f8 03 2f
+D/实时更新开始坐标: 248和815
+D/USRConnect: ------------------>send Data:00 f8 03 2f
+D/手移动后的坐标: 248和821
+D/USRConnect: ------------------>send Data:00 f8 03 35
+D/实时更新开始坐标: 248和821
+D/USRConnect: ------------------>send Data:00 f8 03 35
+D/手移动后的坐标: 248和828
+D/USRConnect: ------------------>send Data:00 f8 03 3c
+D/实时更新开始坐标: 248和828
+D/USRConnect: ------------------>send Data:00 f8 03 3c
+D/手移动后的坐标: 248和836
+D/USRConnect: ------------------>send Data:00 f8 03 44
+D/实时更新开始坐标: 248和836
+D/USRConnect: ------------------>send Data:00 f8 03 44
+D/手移动后的坐标: 248和840
+D/USRConnect: ------------------>send Data:00 f8 03 48
+D/实时更新开始坐标: 248和840
+D/USRConnect: ------------------>send Data:00 f8 03 48
+D/手移动后的坐标: 249和843
+D/USRConnect: ------------------>send Data:00 f9 03 4b
+D/实时更新开始坐标: 249和843
+D/USRConnect: ------------------>send Data:00 f9 03 4b
+D/手移动后的坐标: 250和847
+D/USRConnect: ------------------>send Data:00 fa 03 4f
+D/实时更新开始坐标: 250和847
+D/USRConnect: ------------------>send Data:00 fa 03 4f
+D/手移动后的坐标: 250和850
+D/USRConnect: ------------------>send Data:00 fa 03 52
+D/实时更新开始坐标: 250和850
+D/USRConnect: ------------------>send Data:00 fa 03 52
+D/手移动后的坐标: 250和852
+D/USRConnect: ------------------>send Data:00 fa 03 54
+D/实时更新开始坐标: 250和852
+D/USRConnect: ------------------>send Data:00 fa 03 54
+D/手移动后的坐标: 250和854
+D/USRConnect: ------------------>send Data:00 fa 03 56
+D/实时更新开始坐标: 250和854
+D/USRConnect: ------------------>send Data:00 fa 03 56
+D/手移动后的坐标: 250和855
+D/USRConnect: ------------------>send Data:00 fa 03 57
+D/实时更新开始坐标: 250和855
+D/USRConnect: ------------------>send Data:00 fa 03 57
+D/手移动后的坐标: 250和858
+D/USRConnect: ------------------>send Data:00 fa 03 5a
+D/实时更新开始坐标: 250和858
+D/USRConnect: ------------------>send Data:00 fa 03 5a
+D/手移动后的坐标: 250和860
+D/USRConnect: ------------------>send Data:00 fa 03 5c
+D/实时更新开始坐标: 250和860
+D/USRConnect: ------------------>send Data:00 fa 03 5c
+D/手移动后的坐标: 250和862
+D/USRConnect: ------------------>send Data:00 fa 03 5e
+D/实时更新开始坐标: 250和862
+D/USRConnect: ------------------>send Data:00 fa 03 5e
+D/手移动后的坐标: 250和863
+D/USRConnect: ------------------>send Data:00 fa 03 5f
+D/实时更新开始坐标: 250和863
+D/USRConnect: ------------------>send Data:00 fa 03 5f
+D/手移动后的坐标: 250和864
+D/USRConnect: ------------------>send Data:00 fa 03 60
+D/实时更新开始坐标: 250和864
+D/USRConnect: ------------------>send Data:00 fa 03 60
+D/手移动后的坐标: 250和865
+D/USRConnect: ------------------>send Data:00 fa 03 61
+D/实时更新开始坐标: 250和865
+D/USRConnect: ------------------>send Data:00 fa 03 61
+D/手移动后的坐标: 250和870
+D/USRConnect: ------------------>send Data:00 fa 03 66
+D/实时更新开始坐标: 250和870
+D/USRConnect: ------------------>send Data:00 fa 03 66
+D/手移动后的坐标: 250和871
+D/USRConnect: ------------------>send Data:00 fa 03 67
+D/实时更新开始坐标: 250和871
+D/USRConnect: ------------------>send Data:00 fa 03 67
+D/手移动后的坐标: 250和872
+D/USRConnect: ------------------>send Data:00 fa 03 68
+D/实时更新开始坐标: 250和872
+D/USRConnect: ------------------>send Data:00 fa 03 68
+D/手移动后的坐标: 250和873
+D/USRConnect: ------------------>send Data:00 fa 03 69
+D/实时更新开始坐标: 250和873
+D/USRConnect: ------------------>send Data:00 fa 03 69
+D/手移动后的坐标: 250和874
+D/USRConnect: ------------------>send Data:00 fa 03 6a
+D/实时更新开始坐标: 250和874
+D/USRConnect: ------------------>send Data:00 fa 03 6a
+D/手移动后的坐标: 250和875
+D/USRConnect: ------------------>send Data:00 fa 03 6b
+D/实时更新开始坐标: 250和875
+D/USRConnect: ------------------>send Data:00 fa 03 6b
+D/手移动后的坐标: 250和876
+D/USRConnect: ------------------>send Data:00 fa 03 6c
+D/实时更新开始坐标: 250和876
+D/USRConnect: ------------------>send Data:00 fa 03 6c
+D/手移动后的坐标: 250和877
+D/USRConnect: ------------------>send Data:00 fa 03 6d
+D/实时更新开始坐标: 250和877
+D/USRConnect: ------------------>send Data:00 fa 03 6d
+D/手移动后的坐标: 250和878
+D/USRConnect: ------------------>send Data:00 fa 03 6e
+D/实时更新开始坐标: 250和878
+D/USRConnect: ------------------>send Data:00 fa 03 6e
+D/手移动后的坐标: 250和879
+D/USRConnect: ------------------>send Data:00 fa 03 6f
+D/实时更新开始坐标: 250和879
+D/USRConnect: ------------------>send Data:00 fa 03 6f
+D/手移动后的坐标: 250和880
+D/USRConnect: ------------------>send Data:00 fa 03 70
+D/实时更新开始坐标: 250和880
+D/USRConnect: ------------------>send Data:00 fa 03 70
+D/手移动后的坐标: 250和882
+D/USRConnect: ------------------>send Data:00 fa 03 72
+D/实时更新开始坐标: 250和882
+D/USRConnect: ------------------>send Data:00 fa 03 72
+D/手移动后的坐标: 250和883
+D/USRConnect: ------------------>send Data:00 fa 03 73
+D/实时更新开始坐标: 250和883
+D/USRConnect: ------------------>send Data:00 fa 03 73
+D/手移动后的坐标: 250和885
+D/USRConnect: ------------------>send Data:00 fa 03 75
+D/实时更新开始坐标: 250和885
+D/USRConnect: ------------------>send Data:00 fa 03 75
+D/手移动后的坐标: 250和888
+D/USRConnect: ------------------>send Data:00 fa 03 78
+D/实时更新开始坐标: 250和888
+D/USRConnect: ------------------>send Data:00 fa 03 78
+D/手移动后的坐标: 250和892
+D/USRConnect: ------------------>send Data:00 fa 03 7c
+D/实时更新开始坐标: 250和892
+D/USRConnect: ------------------>send Data:00 fa 03 7c
+D/手移动后的坐标: 243和894
+D/USRConnect: ------------------>send Data:00 f3 03 7e
+D/实时更新开始坐标: 243和894
+D/USRConnect: ------------------>send Data:00 f3 03 7e
+D/手移动后的坐标: 243和897
+D/USRConnect: ------------------>send Data:00 f3 03 81
+D/实时更新开始坐标: 243和897
+D/USRConnect: ------------------>send Data:00 f3 03 81
+D/手移动后的坐标: 243和900
+D/USRConnect: ------------------>send Data:00 f3 03 84
+D/实时更新开始坐标: 243和900
+D/USRConnect: ------------------>send Data:00 f3 03 84
+D/手移动后的坐标: 240和903
+D/USRConnect: ------------------>send Data:00 f0 03 87
+D/实时更新开始坐标: 240和903
+D/USRConnect: ------------------>send Data:00 f0 03 87
+D/手移动后的坐标: 240和912
+D/USRConnect: ------------------>send Data:00 f0 03 90
+D/实时更新开始坐标: 240和912
+D/USRConnect: ------------------>send Data:00 f0 03 90
+D/手移动后的坐标: 238和939
+D/USRConnect: ------------------>send Data:00 ee 03 ab
+D/实时更新开始坐标: 238和939
+D/USRConnect: ------------------>send Data:00 ee 03 ab
+D/USRConnect: ------------------>send Data:01 a8 01 03
+D/手按下的时候的坐标: 424和259
+D/手移动后的坐标: 424和275
+D/USRConnect: ------------------>send Data:01 a8 01 13
+D/实时更新开始坐标: 424和275
+D/USRConnect: ------------------>send Data:01 a8 01 13
+D/手移动后的坐标: 419和284
+D/USRConnect: ------------------>send Data:01 a3 01 1c
+D/实时更新开始坐标: 419和284
+D/USRConnect: ------------------>send Data:01 a3 01 1c
+D/手移动后的坐标: 417和297
+D/USRConnect: ------------------>send Data:01 a1 01 29
+D/实时更新开始坐标: 417和297
+D/USRConnect: ------------------>send Data:01 a1 01 29
+D/手移动后的坐标: 417和310
+D/USRConnect: ------------------>send Data:01 a1 01 36
+D/实时更新开始坐标: 417和310
+D/USRConnect: ------------------>send Data:01 a1 01 36
+D/手移动后的坐标: 420和334
+D/USRConnect: ------------------>send Data:01 a4 01 4e
+D/实时更新开始坐标: 420和334
+D/USRConnect: ------------------>send Data:01 a4 01 4e
+D/手移动后的坐标: 426和355
+D/USRConnect: ------------------>send Data:01 aa 01 63
+D/实时更新开始坐标: 426和355
+D/USRConnect: ------------------>send Data:01 aa 01 63
+D/手移动后的坐标: 429和382
+D/USRConnect: ------------------>send Data:01 ad 01 7e
+D/实时更新开始坐标: 429和382
+D/USRConnect: ------------------>send Data:01 ad 01 7e
+D/手移动后的坐标: 430和405
+D/USRConnect: ------------------>send Data:01 ae 01 95
+D/实时更新开始坐标: 430和405
+D/USRConnect: ------------------>send Data:01 ae 01 95
+D/手移动后的坐标: 431和427
+D/USRConnect: ------------------>send Data:01 af 01 ab
+D/实时更新开始坐标: 431和427
+D/USRConnect: ------------------>send Data:01 af 01 ab
+D/手移动后的坐标: 432和456
+D/USRConnect: ------------------>send Data:01 b0 01 c8
+D/实时更新开始坐标: 432和456
+D/USRConnect: ------------------>send Data:01 b0 01 c8
+D/手移动后的坐标: 432和470
+D/USRConnect: ------------------>send Data:01 b0 01 d6
+D/实时更新开始坐标: 432和470
+D/USRConnect: ------------------>send Data:01 b0 01 d6
+D/手移动后的坐标: 432和494
+D/USRConnect: ------------------>send Data:01 b0 01 ee
+D/实时更新开始坐标: 432和494
+D/USRConnect: ------------------>send Data:01 b0 01 ee
+D/手移动后的坐标: 432和516
+D/USRConnect: ------------------>send Data:01 b0 02 04
+D/实时更新开始坐标: 432和516
+D/USRConnect: ------------------>send Data:01 b0 02 04
+D/手移动后的坐标: 432和534
+D/USRConnect: ------------------>send Data:01 b0 02 16
+D/实时更新开始坐标: 432和534
+D/USRConnect: ------------------>send Data:01 b0 02 16
+D/手移动后的坐标: 424和552
+D/USRConnect: ------------------>send Data:01 a8 02 28
+D/实时更新开始坐标: 424和552
+D/USRConnect: ------------------>send Data:01 a8 02 28
+D/手移动后的坐标: 420和572
+D/USRConnect: ------------------>send Data:01 a4 02 3c
+D/实时更新开始坐标: 420和572
+D/USRConnect: ------------------>send Data:01 a4 02 3c
+D/手移动后的坐标: 420和591
+D/USRConnect: ------------------>send Data:01 a4 02 4f
+D/实时更新开始坐标: 420和591
+D/USRConnect: ------------------>send Data:01 a4 02 4f
+D/手移动后的坐标: 418和610
+D/USRConnect: ------------------>send Data:01 a2 02 62
+D/实时更新开始坐标: 418和610
+D/USRConnect: ------------------>send Data:01 a2 02 62
+D/手移动后的坐标: 417和620
+D/USRConnect: ------------------>send Data:01 a1 02 6c
+D/实时更新开始坐标: 417和620
+D/USRConnect: ------------------>send Data:01 a1 02 6c
+D/手移动后的坐标: 416和643
+D/USRConnect: ------------------>send Data:01 a0 02 83
+D/实时更新开始坐标: 416和643
+D/USRConnect: ------------------>send Data:01 a0 02 83
+D/手移动后的坐标: 416和656
+D/USRConnect: ------------------>send Data:01 a0 02 90
+D/实时更新开始坐标: 416和656
+D/USRConnect: ------------------>send Data:01 a0 02 90
+D/手移动后的坐标: 416和675
+D/USRConnect: ------------------>send Data:01 a0 02 a3
+D/实时更新开始坐标: 416和675
+D/USRConnect: ------------------>send Data:01 a0 02 a3
+D/手移动后的坐标: 416和692
+D/USRConnect: ------------------>send Data:01 a0 02 b4
+D/实时更新开始坐标: 416和692
+D/USRConnect: ------------------>send Data:01 a0 02 b4
+D/手移动后的坐标: 416和707
+D/USRConnect: ------------------>send Data:01 a0 02 c3
+D/实时更新开始坐标: 416和707
+D/USRConnect: ------------------>send Data:01 a0 02 c3
+D/手移动后的坐标: 416和723
+D/USRConnect: ------------------>send Data:01 a0 02 d3
+D/实时更新开始坐标: 416和723
+D/USRConnect: ------------------>send Data:01 a0 02 d3
+D/手移动后的坐标: 416和734
+D/USRConnect: ------------------>send Data:01 a0 02 de
+D/实时更新开始坐标: 416和734
+D/USRConnect: ------------------>send Data:01 a0 02 de
+D/手移动后的坐标: 416和750
+D/USRConnect: ------------------>send Data:01 a0 02 ee
+D/实时更新开始坐标: 416和750
+D/USRConnect: ------------------>send Data:01 a0 02 ee
+D/手移动后的坐标: 415和763
+D/USRConnect: ------------------>send Data:01 9f 02 fb
+D/实时更新开始坐标: 415和763
+D/USRConnect: ------------------>send Data:01 9f 02 fb
+D/手移动后的坐标: 415和776
+D/USRConnect: ------------------>send Data:01 9f 03 08
+D/实时更新开始坐标: 415和776
+D/USRConnect: ------------------>send Data:01 9f 03 08
+D/手移动后的坐标: 413和789
+D/USRConnect: ------------------>send Data:01 9d 03 15
+D/实时更新开始坐标: 413和789
+D/USRConnect: ------------------>send Data:01 9d 03 15
+D/手移动后的坐标: 413和806
+D/USRConnect: ------------------>send Data:01 9d 03 26
+D/实时更新开始坐标: 413和806
+D/USRConnect: ------------------>send Data:01 9d 03 26
+D/手移动后的坐标: 411和818
+D/USRConnect: ------------------>send Data:01 9b 03 32
+D/实时更新开始坐标: 411和818
+D/USRConnect: ------------------>send Data:01 9b 03 32
+D/手移动后的坐标: 412和832
+D/USRConnect: ------------------>send Data:01 9c 03 40
+D/实时更新开始坐标: 412和832
+D/USRConnect: ------------------>send Data:01 9c 03 40
+D/手移动后的坐标: 411和839
+D/USRConnect: ------------------>send Data:01 9b 03 47
+D/实时更新开始坐标: 411和839
+D/USRConnect: ------------------>send Data:01 9b 03 47
+D/手移动后的坐标: 409和850
+D/USRConnect: ------------------>send Data:01 99 03 52
+D/实时更新开始坐标: 409和850
+D/USRConnect: ------------------>send Data:01 99 03 52
+D/手移动后的坐标: 410和857
+D/USRConnect: ------------------>send Data:01 9a 03 59
+D/实时更新开始坐标: 410和857
+D/USRConnect: ------------------>send Data:01 9a 03 59
+D/手移动后的坐标: 410和868
+D/USRConnect: ------------------>send Data:01 9a 03 64
+D/实时更新开始坐标: 410和868
+D/USRConnect: ------------------>send Data:01 9a 03 64
+D/手移动后的坐标: 410和876
+D/USRConnect: ------------------>send Data:01 9a 03 6c
+D/实时更新开始坐标: 410和876
+D/USRConnect: ------------------>send Data:01 9a 03 6c
+D/手移动后的坐标: 408和887
+D/USRConnect: ------------------>send Data:01 98 03 77
+D/实时更新开始坐标: 408和887
+D/USRConnect: ------------------>send Data:01 98 03 77
+D/手移动后的坐标: 405和897
+D/USRConnect: ------------------>send Data:01 95 03 81
+D/实时更新开始坐标: 405和897
+D/USRConnect: ------------------>send Data:01 95 03 81

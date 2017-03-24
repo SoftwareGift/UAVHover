@@ -1,0 +1,14 @@
+// 创建一张空白图片
+//        Bitmap baseBitmapCv = Bitmap.createBitmap(baseScreenWidth, baseScreenHeight, Bitmap.Config.ARGB_8888);
+//        Canvas cv = new Canvas(baseBitmapCv);  //根据bitamp创建画布
+//        cv.scale(widthPix/baseScreenWidth,heightPix/baseScreenHeight);
+//        this.canvas = cv;
+//        this.baseBitmap = baseBitmapCv;
+        Bitmap baseBitmap = Bitmap.createBitmap(widthPix, heightPix, Bitmap.Config.ARGB_8888);
+        // 创建一张画布
+        canvas = new Canvas(baseBitmap);
+        // 画布背景为灰色
+        canvas.drawColor(Color.GRAY);
+//        this.canvas.drawColor(Color.WHITE);
+//        // 创建画笔
+        paint = new Paint();
